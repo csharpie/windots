@@ -1,0 +1,153 @@
+format = """
+[](fg:purple)\
+$os\
+$username\
+[](bg:magenta fg:purple)\
+$directory\
+[](fg:magenta bg:dark_blue)\
+$git_branch\
+$git_status\
+[](fg:dark_blue bg:astral)\
+$c\
+$dotnet\
+$java\
+$nodejs\
+$python\
+[](fg:astral bg:green)\
+$time\
+[](fg:green)
+[](fg:purple)\
+[$character](bg:purple)\
+[](fg:purple bg:magenta)\
+[](fg:magenta bg:dark_blue)\
+[](fg:dark_blue bg:astral)\
+[ ](fg:astral)\
+"""
+
+palette = "monokai"
+
+[palettes.monokai]
+background = "#272822"
+foreground = "#F8F8F2"
+cursor = "#F8F8F0"
+black = "#272822"
+red = "#F92672"
+green = "#25501C"
+yellow = "#F4BF75"
+blue = "#66D9EF"
+dark_blue = "#244999"
+astral = "#33658A"
+magenta = "#9A348E"
+cyan = "#A1EFE4"
+white = "#F8F8F2"
+purple = "#4D0082"
+grey = "#9A348E"
+bright_black = "#75715E"
+bright_red = "#FD971F"
+bright_green = "#9ECE58"
+bright_yellow = "#FFD866"
+bright_blue = "#66D9EF"
+bright_magenta = "#AE81FF"
+bright_cyan = "#38CCD1"
+bright_white = "#FFFFFF"
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:purple"
+style_root = "bg:purple"
+format = "[ $user ]($style)"
+
+[directory]
+read_only = " 🔒"
+style = "bg:magenta"
+format = "[ $path ]($style)"
+truncate_to_repo = false
+truncation_length = 4
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = " "
+style = "bg:astral"
+format = "[ $symbol ($version) ]($style)"
+
+[docker_context]
+symbol = "  "
+style = "bg:astral"
+format = "[ $symbol $context ]($style) $path"
+
+[dotnet]
+symbol = " "
+style = "bg:astral"
+format = "[ $symbol($version )(🎯 $tfm )]($style)"
+
+[java]
+symbol = "  "
+style = "bg:astral"
+format = "[ $symbol ($version) ]($style)"
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+style = "bg:astral"
+symbol = "  "
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bg:astral"
+symbol = "  "
+
+[git_branch]
+symbol = ""
+style = "bg:dark_blue"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:dark_blue"
+format = "[$all_status$ahead_behind]($style)"
+conflicted = "= "
+ahead = "⇡ "
+behind = "⇣ "
+diverged = "⇕ "
+up_to_date = ""
+untracked = "? "
+stashed = "$ "
+modified = "! "
+staged = "+ "
+renamed = "» "
+deleted = "✘ "
+
+[time]
+disabled = false
+format = "[🕙 $time ]($style)"
+use_12hr = true
+style = "bg:green"
+
+[character]
+format = " $symbol"
+success_symbol = "[](bg:purple)"
+error_symbol = "[👎](bg:#purple)"
+
+[os]
+format = "[$symbol]($style)"
+disabled = false
+style = "bg:purple"
+
+[os.symbols]
+Windows = " "
+Ubuntu = ""
+Macos = "󰀵"
