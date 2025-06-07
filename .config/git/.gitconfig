@@ -9,3 +9,5 @@
 	clean = git-lfs clean -- %f
 [rerere]
 	enabled = true
+[core]
+	editor = "code"
