@@ -10,4 +10,4 @@
 [rerere]
 	enabled = true
 [core]
-	editor = "code"
+	editor = code --wait --new-window
